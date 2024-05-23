@@ -1,0 +1,37 @@
+<html>
+  <head>
+    <title>Font Check</title>
+    <meta http-equiv="Content-Type" Content="text/html; charset=UTF-8"/>
+  </head>
+  <body>
+	  <script>
+			var phrase = "אֲרַמִּי אֹבֵד אָבִי וַיֵּרֶד מִצְרַיְמָה וַיָּגָר שָׁם בִּמְתֵי מְעָט וַיְהִי שָׁם לְגוֹי גָּדוֹל עָצוּם וָרָב";
+			
+			var styles = [
+			  //Block fonts			
+			     "Sans Serif",
+			     "Tahoma",
+        "Aharoni",
+           "Lucida Sans Unicode",
+        
+			  //Seriff fonts
+			      "Serif",
+			  "David",   //Also Good 
+        "FrankRuehl",
+        "Narkisim", //Also Good
+		    
+		    //Typefonts
+		        "Courier New",
+		        "Miriam",
+		    "Levenim MT"
+			];
+			
+			for(var face in styles) {
+				var s = styles[face];
+				for(var size = 16; size <= 36; size +=4) {
+					document.write('<p title="'+ s + " " + size + '" style="font: ' + size + 'px ' + s + ';">' + phrase + '</p>');
+				} 
+			}
+	  </script>
+  </body>
+</html>

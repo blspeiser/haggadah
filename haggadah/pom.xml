@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.speiser.haggadah</groupId>
+  <artifactId>AishRokeim</artifactId>
+  <packaging>war</packaging>
+  <version>0.0.1</version>
+  <description>Baruch's Hagaddah</description>
+  <build>
+    <plugins>
+      <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <configuration>
+          <source>1.7</source>          
+          <target>1.7</target>
+          <encoding>US-ASCII</encoding> <!-- Java code may not contain UTF-8 characters in it. -->
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+</project>

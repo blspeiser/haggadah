@@ -1,0 +1,51 @@
+body { padding: 0 0 0 0; font-family: Verdana; font-size: 10pt; max-width: 999px; text-align: center; margin: auto;}
+.page-container { width: 90%; border-style: none; 
+                  border-collapse: collapse; empty-cells: show; table-layout: fixed; 
+                  page-break-after: always; margin-bottom: 120px;}
+.hebrew  { direction: rtl; text-align: justify; vertical-align: top; padding-left:  10px;}
+.english { direction: ltr; text-align: justify; vertical-align: top; padding-right: 10px; padding-top: 6px; }
+.inclusion { background-color: #D9D9D9; }
+.spacer { height: 24px; empty-cells: show;}
+.instructions { text-align: center; font: 13pt Times New Roman; font-style: italic;}
+.commentary { text-align: justify; font-family: Arial; font-size: 8pt; }
+.commentary td { padding-bottom: 10px; }
+.commentary .spacer { height: 5px;} 
+.section-title td { text-align: center; font-family: Arial; font-size: 10pt;
+                 font-variant: small-caps; border: 1px solid black; background-color: #DDDDDD;}                 
+
+/* FONT SELECTIONS
+.hebrew { font: 18pt Narkisim; }
+.hebrew { font: 20pt David; }
+.hebrew { font: 22pt FrankRuehl; }
+.hebrew { font: 22pt serif; }
+*/
+.hebrew  { font: 22pt FrankRuehl; }
+.english { font: 12pt Verdana; }
+
+.hebrew strong { font: 26pt David; font-weight: bolder; }
+
+th.hebrew  { text-align: left;  font-size: 24pt; }
+td.hebrew  { padding-right: 8px; }
+td.hebrew  span.inclusion { font-size: 12pt; }
+th.english { text-align: right; font-size: 16pt; font-weight: bold; }
+td.english { padding-left: 8px; padding-top: 10px;}
+td.english span.inclusion { font-size: 10pt; }
+td.english sup { font-size: 6pt; }
+
+td .textcolumn { width: 100%; height: 36px; white-space: nowrap; margin-top: 0px; margin-bottom: 0px;} 
+
+td.hebrew  .textcolumn.leading  { text-align: right; white-space: normal; }
+td.hebrew  .textcolumn.trailing { text-align: left;  white-space: normal; }
+td.english .textcolumn.leading  { text-align: left;  white-space: normal; }
+td.english .textcolumn.trailing { text-align: right; white-space: normal; }
+
+
+/*
+span.textcolumn.leading, span.textcolumn.trailing { width: 49% !important; }  
+td.english span.textcolumn.leading  { width: 65% !important; white-space: nowrap; }
+td.english span.textcolumn.trailing { width: 34% !important; white-space: nowrap; }
+td.english span.textcolumn.trailing { float: right; text-align: right;}
+td.hebrew  span.textcolumn.trailing { float: left;  text-align: left; }
+*/
+
+/* Consider a margin-bottom on <tr>. */
