@@ -1,4 +1,4 @@
-body { padding: 0 0 0 0; font-family: Verdana; font-size: 10pt; max-width: 999px; text-align: center; margin: auto;}
+body { padding: 0 0 0 0; max-width: 999px; text-align: center; margin: auto;}
 .page-container { width: 90%; border-style: none; 
                   border-collapse: collapse; empty-cells: show; table-layout: fixed; 
                   page-break-after: always; margin-bottom: 120px;}
@@ -6,23 +6,38 @@ body { padding: 0 0 0 0; font-family: Verdana; font-size: 10pt; max-width: 999px
 .english { direction: ltr; text-align: justify; vertical-align: top; padding-right: 10px; padding-top: 6px; }
 .inclusion { background-color: #D9D9D9; }
 .spacer { height: 24px; empty-cells: show;}
-.instructions { text-align: center; font: 13pt Times New Roman; font-style: italic;}
-.commentary { text-align: justify; font-family: Arial; font-size: 8pt; }
+.instructions { text-align: center; }
+.commentary { text-align: justify; }
 .commentary td { padding-bottom: 10px; }
 .commentary .spacer { height: 5px;} 
-.section-title td { text-align: center; font-family: Arial; font-size: 10pt;
-                 font-variant: small-caps; border: 1px solid black; background-color: #DDDDDD;}                 
+.section-title td { text-align: center; font-variant: all-small-caps; border: 1px solid black; background-color: #DDDDDD;}                 
 
-/* FONT SELECTIONS
-.hebrew { font: 18pt Narkisim; }
-.hebrew { font: 20pt David; }
-.hebrew { font: 22pt FrankRuehl; }
-.hebrew { font: 22pt serif; }
-*/
-.hebrew  { font: 22pt FrankRuehl; }
-.english { font: 12pt Verdana; }
 
-.hebrew strong { font: 26pt David; font-weight: bolder; }
+
+/** SIZES **/
+body              { font-size: 10pt; }
+.hebrew           { font-size: 22pt; }
+.english          { font-size: 12pt; }
+.instructions     { font-size: 13pt; }
+.commentary       { font-size: 8pt; }
+.section-title td { font-size: 16pt; }
+.hebrew strong    { font-size: 24pt; } 
+
+
+/** FONTS **/ 
+body              { font-weight: 400; font-style: normal; font-family: "Poppins", monospace; }
+.commentary       { font-weight: 400; font-style: normal; font-family: "Poppins", monospace; } 
+.hebrew           { font-weight: 400; font-style: normal; font-family: "Bona Nova SC", monospace; }
+/* .hebrew           { font-weight: 400; font-style: normal; font-family: "Tinos", serif; } */
+.english          { font-weight: 400; font-style: normal; font-family: "Lato", monospace; }
+.instructions     { font-weight: 400; font-style: italic; font-family: "EB Garamond", monospace; }
+.commentary       { font-weight: 400; font-style: normal; font-family: "Poppins", monospace; }	
+.section-title td { font-weight: 500; font-style: normal; font-family: "Poppins", monospace; } 
+.hebrew strong    { font-weight: 400; font-style: normal; font-family: "Frank Ruhl Libre", monospace; }
+
+
+/** ADDITIONAL **/
+.hebrew strong { font-weight: bolder; }
 
 th.hebrew  { text-align: left;  font-size: 24pt; }
 td.hebrew  { padding-right: 8px; }
