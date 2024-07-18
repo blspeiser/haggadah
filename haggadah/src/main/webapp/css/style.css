@@ -1,5 +1,5 @@
-body { padding: 0 0 0 0; max-width: 999px; text-align: center; margin: auto;}
-.page-container { width: 90%; border-style: none; 
+body { padding: 0 0 0 0; max-width: 940px; text-align: center; margin: auto;}
+.page-container { width: 100%; border-style: none; 
                   border-collapse: collapse; empty-cells: show; table-layout: fixed; 
                   page-break-after: always; margin-bottom: 120px;}
 .hebrew  { direction: rtl; text-align: justify; vertical-align: top; padding-left:  10px;}
@@ -10,25 +10,33 @@ body { padding: 0 0 0 0; max-width: 999px; text-align: center; margin: auto;}
 .commentary { text-align: justify; }
 .commentary td { padding-bottom: 10px; }
 .commentary .spacer { height: 5px;} 
-.section-title td { text-align: center; font-variant: all-small-caps; border: 1px solid black; background-color: #DDDDDD;}                 
+.section-title td { text-align: center; font-variant: all-small-caps; border: 1px solid black; background-color: #DDDDDD;} 
+.break { page-break-before: always; }                
 
-
+/** ORPHAN CONTROL **/
+td { widows: 4; orphans: 4; }
+td.instructions { orphans: 0; }
+.section-title { orphans: 0; page-break-after: avoid; }
+.section-title+tbody { page-break-before: avoid; }
+.leading.instructions { page-break-after: avoid; }
+.concluding.instructions { page-break-before: avoid; }
+.concluding.instructions::before { content: "\00a0"; }
+.instructions p.padded { padding-top: 10px; }
 
 /** SIZES **/
-body              { font-size: 10pt; }
-.hebrew           { font-size: 22pt; }
-.english          { font-size: 12pt; }
-.instructions     { font-size: 13pt; }
-.commentary       { font-size: 8pt; }
-.section-title td { font-size: 16pt; }
-.hebrew strong    { font-size: 24pt; } 
-
+body                { font-size: 10pt; }
+.hebrew             { font-size: 22pt; }
+.english            { font-size: 13pt; }
+.instructions       { font-size: 13pt; }
+.commentary         { font-size: 8.5pt;}
+.section-title td   { font-size: 16pt; }
+.hebrew strong      { font-size: 24pt; } 
+.commentary:has(tr>td>hr) { font-size: 7pt;  } /* footnotes */
 
 /** FONTS **/ 
 body              { font-weight: 400; font-style: normal; font-family: "Poppins", monospace; }
 .commentary       { font-weight: 400; font-style: normal; font-family: "Poppins", monospace; } 
 .hebrew           { font-weight: 400; font-style: normal; font-family: "Bona Nova SC", monospace; }
-/* .hebrew           { font-weight: 400; font-style: normal; font-family: "Tinos", serif; } */
 .english          { font-weight: 400; font-style: normal; font-family: "Lato", monospace; }
 .instructions     { font-weight: 400; font-style: italic; font-family: "EB Garamond", monospace; }
 .commentary       { font-weight: 400; font-style: normal; font-family: "Poppins", monospace; }	
@@ -54,13 +62,16 @@ td.hebrew  .textcolumn.trailing { text-align: left;  white-space: normal; }
 td.english .textcolumn.leading  { text-align: left;  white-space: normal; }
 td.english .textcolumn.trailing { text-align: right; white-space: normal; }
 
-
-/*
-span.textcolumn.leading, span.textcolumn.trailing { width: 49% !important; }  
-td.english span.textcolumn.leading  { width: 65% !important; white-space: nowrap; }
-td.english span.textcolumn.trailing { width: 34% !important; white-space: nowrap; }
-td.english span.textcolumn.trailing { float: right; text-align: right;}
-td.hebrew  span.textcolumn.trailing { float: left;  text-align: left; }
-*/
-
 /* Consider a margin-bottom on <tr>. */
+
+@media print {
+  @page {
+    size: A4 portrait;
+    @bottom-center {
+      font-family: "EB Garamond", monospace;
+      font-weight: 400;
+      font-size: 12pt;
+      content: counter(page);
+    }
+  }
+}
