@@ -13,8 +13,8 @@
       <plugin>
         <artifactId>maven-compiler-plugin</artifactId>
         <configuration>
-          <source>1.7</source>
-          <target>1.7</target>
+          <source>21</source>
+          <target>21</target>
           <encoding>US-ASCII</encoding> <!-- Java code may not contain UTF-8 characters in it. -->
         </configuration>
       </plugin>
@@ -36,5 +36,10 @@
       <version>3.0.2</version>
       <scope>test</scope>
     </dependency>
+    <dependency>
+      <groupId>org.nanohttpd</groupId>
+      <artifactId>nanohttpd</artifactId>
+      <version>2.3.1</version>
+    </dependency>    
   </dependencies>
 </project>

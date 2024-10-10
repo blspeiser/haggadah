@@ -43,7 +43,7 @@ public class AddPageNumbers {
             contentStream.beginText();
             // set font and font size
             contentStream.setFont(font, fontSize);
-            // set text color to red
+            // set text color to black
             contentStream.setNonStrokingColor(Color.BLACK);
             if(rotate) {
               // rotate the text according to the page rotation
