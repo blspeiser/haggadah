@@ -14,6 +14,7 @@ import org.apache.pdfbox.pdmodel.font.PDType1Font;
 import org.apache.pdfbox.pdmodel.font.Standard14Fonts.FontName;
 import org.apache.pdfbox.util.Matrix;
 
+//This class no longer seems to be required now that Chrome properly renders printed page numbers. 
 public class AddPageNumbers {
 
   public static void main(String... args) {
