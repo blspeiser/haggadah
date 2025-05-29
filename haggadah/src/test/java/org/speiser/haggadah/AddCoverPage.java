@@ -4,6 +4,7 @@ import java.io.File;
 
 import org.apache.pdfbox.multipdf.PDFMergerUtility;
 import org.apache.pdfbox.pdmodel.PDDocument;
+import org.apache.pdfbox.pdmodel.PDDocumentInformation;
 import org.apache.pdfbox.pdmodel.PDPage;
 
 public class AddCoverPage {
@@ -20,8 +21,13 @@ public class AddCoverPage {
       blank.addPage(new PDPage());
       blank.save(extra);
       blank.close();
-      
+
+      PDDocumentInformation info = new PDDocumentInformation();
+      info.setTitle("Haggadah");
+      info.setAuthor("Baruch Speiser");
+
       PDFMergerUtility merger = new PDFMergerUtility();
+      merger.setDestinationDocumentInformation(info);
       merger.setDestinationFileName(out.getAbsolutePath());
       merger.addSource(cover);
       merger.addSource(content);
