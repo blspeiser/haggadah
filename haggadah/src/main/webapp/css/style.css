@@ -1,7 +1,5 @@
-body { padding: 0 0 0 0; max-width: 940px; text-align: center; margin: auto;}
-.page-container { width: 100%; border-style: none; 
-                  border-collapse: collapse; empty-cells: show; table-layout: fixed; 
-                  page-break-after: always; margin-bottom: 120px;}
+body { padding: 0 0 0 0; max-width: 940px; text-align: center; margin: auto; }
+.page-container { width: 100%; border-style: none; border-collapse: collapse; empty-cells: show; table-layout: fixed;  margin-bottom: 120px;}
 .hebrew  { direction: rtl; text-align: justify; vertical-align: top; padding-left:  10px;}
 .english { direction: ltr; text-align: justify; vertical-align: top; padding-right: 10px; padding-top: 6px; }
 .inclusion { background-color: #D9D9D9; }
@@ -10,28 +8,33 @@ body { padding: 0 0 0 0; max-width: 940px; text-align: center; margin: auto;}
 .commentary { text-align: justify; }
 .commentary td { padding-bottom: 10px; }
 .commentary .spacer { height: 5px;} 
-.section-title td { text-align: center; font-variant: all-small-caps; border: 1px solid black; background-color: #DDDDDD;} 
-.break { page-break-before: always; }                
+.section-title td { text-align: center; font-variant: all-small-caps; background-color: #DDDDDD; border: 1px solid black; } 
 
 /** ORPHAN CONTROL **/
+.page-container { break-after: page; }
 td { widows: 4; orphans: 4; }
-td.instructions { orphans: 0; }
-.section-title { orphans: 0; page-break-after: avoid; }
-.section-title+tbody { page-break-before: avoid; }
-.leading.instructions { page-break-after: avoid; }
-.concluding.instructions { page-break-before: avoid; }
+.section-title { break-after: avoid; }
+.section-title+tbody { break-before: avoid; }
+.leading.instructions { break-after: avoid; }
+.concluding.instructions { break-before: avoid; }
 .concluding.instructions::before { content: "\00a0"; }
 .instructions p.padded { padding-top: 10px; }
+tbody.break { break-before: page; }
+tbody:has(+ .break) { break-after: page; }
 
 /** SIZES **/
 body                { font-size: 10pt; }
-.hebrew             { font-size: 22pt; }
-.english            { font-size: 13pt; }
-.instructions       { font-size: 13pt; }
-.commentary         { font-size: 8.5pt;}
-.section-title td   { font-size: 16pt; }
-.hebrew strong      { font-size: 24pt; } 
-.commentary:has(tr>td>hr) { font-size: 7pt;  } /* footnotes */
+.hebrew             { font-size: 25pt; }
+.english            { font-size: 16pt; }
+.instructions       { font-size: 16pt; }
+.commentary         { font-size: 12pt;}
+.section-title td   { font-size: 18pt; }
+.hebrew strong      { font-size: 27pt; } 
+td.english sup      { font-size: 10pt; }
+th.hebrew           { font-size: 27pt; }
+th.english          { font-size: 19pt; }
+td.english span.inclusion { font-size: 14pt; }
+td.hebrew  span.inclusion { font-size: 18pt; }
 
 /** FONTS **/ 
 body              { font-weight: 400; font-style: normal; font-family: "Poppins", monospace; }
@@ -43,30 +46,25 @@ body              { font-weight: 400; font-style: normal; font-family: "Poppins"
 .section-title td { font-weight: 500; font-style: normal; font-family: "Poppins", monospace; } 
 .hebrew strong    { font-weight: 400; font-style: normal; font-family: "Frank Ruhl Libre", monospace; }
 
-
 /** ADDITIONAL **/
 .hebrew strong { font-weight: bolder; }
-
-th.hebrew  { text-align: left;  font-size: 24pt; }
+th.hebrew  { text-align: left; }
 td.hebrew  { padding-right: 8px; }
-td.hebrew  span.inclusion { font-size: 12pt; }
-th.english { text-align: right; font-size: 16pt; font-weight: bold; }
+th.english { text-align: right; font-weight: bold; }
 td.english { padding-left: 8px; padding-top: 10px;}
-td.english span.inclusion { font-size: 10pt; }
-td.english sup { font-size: 6pt; }
 
-td .textcolumn { width: 100%; height: 36px; white-space: nowrap; margin-top: 0px; margin-bottom: 0px;} 
+/** trick for padding between rows in a table: */
+tr.leading  { border-top:    8px solid transparent; }
+tr.trailing { border-bottom: 8px solid transparent; }
 
-td.hebrew  .textcolumn.leading  { text-align: right; white-space: normal; }
-td.hebrew  .textcolumn.trailing { text-align: left;  white-space: normal; }
-td.english .textcolumn.leading  { text-align: left;  white-space: normal; }
-td.english .textcolumn.trailing { text-align: right; white-space: normal; }
-
-/* Consider a margin-bottom on <tr>. */
+tr.leading  td.hebrew  { text-align: right; }
+tr.trailing td.hebrew  { text-align: left;  }
+tr.leading  td.english { text-align: left;  }
+tr.trailing td.english { text-align: right; } 
 
 @media print {
   @page {
-    size: A4 portrait;
+    size: 74mm 105mm portrait; /* A7 */
     margin: 0.4in;
     @bottom-center {
       font-family: "EB Garamond", monospace;
