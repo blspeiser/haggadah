@@ -11,10 +11,12 @@ public class AddCoverPage {
 
   public static void main(String... args) {
     try {
-      File cover = new File("../CoverPage.pdf");
+      File front = new File("../assets/front-cover.pdf");
+      File cover = new File("../assets/title-dedication.pdf");
       File content = new File("../Haggadah.pdf");
+      File extra = File.createTempFile("blank", ".pdf"); //blank page at end
+      File back = new File("../assets/back-cover.pdf");
       File out = new File("../PrintableHaggadah.pdf");
-      File extra = File.createTempFile("blank", ".pdf");
       
       // Create a PDF with a single blank page to add at the end
       PDDocument blank = new PDDocument();
@@ -29,9 +31,11 @@ public class AddCoverPage {
       PDFMergerUtility merger = new PDFMergerUtility();
       merger.setDestinationDocumentInformation(info);
       merger.setDestinationFileName(out.getAbsolutePath());
+      merger.addSource(front);
       merger.addSource(cover);
       merger.addSource(content);
       merger.addSource(extra);
+      merger.addSource(back);
       merger.mergeDocuments(null);
       
     } catch(Exception e) {
