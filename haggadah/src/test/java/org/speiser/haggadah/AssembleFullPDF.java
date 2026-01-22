@@ -7,7 +7,7 @@ import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.pdmodel.PDDocumentInformation;
 import org.apache.pdfbox.pdmodel.PDPage;
 
-public class AddCoverPage {
+public class AssembleFullPDF {
 
   public static void main(String... args) {
     try {
