@@ -9,10 +9,12 @@ body { padding: 0 0 0 0; max-width: 940px; text-align: center; margin: auto; }
 .commentary td { padding-bottom: 10px; }
 .commentary .spacer { height: 5px;} 
 .section-title td { text-align: center; font-variant: all-small-caps; background-color: #DDDDDD; border: 1px solid black; } 
+.hebrew.unjustified { text-align: right; }
+.english.unjustified { text-align: left; }
 
 /** ORPHAN CONTROL **/
 .page-container { break-after: page; }
-td { widows: 4; orphans: 4; }
+td { widows: 3; orphans: 3; }
 .section-title { break-after: avoid; }
 .section-title+tbody { break-before: avoid; }
 .leading.instructions { break-after: avoid; }
@@ -65,7 +67,11 @@ tr.trailing td.english { text-align: right; }
 @media print {
   @page {
     size: 74mm 105mm portrait; /* A7 */
-    margin: 0.4in;
+    /* in print, 0.4in on an A5 came out as exactly 1cm, so 0.6 should come out as 1.5cm */
+    margin-left:   0.6in;
+    margin-right:  0.6in;
+    margin-bottom: 0.4in;
+    margin-top:    0.3in; /* A5 print came out with the top margin a bit too big, so shrinking */
     @bottom-center {
       font-family: "EB Garamond", monospace;
       font-weight: 400;
