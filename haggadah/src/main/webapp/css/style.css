@@ -14,7 +14,7 @@ body { padding: 0 0 0 0; max-width: 940px; text-align: center; margin: auto; }
 
 /** ORPHAN CONTROL **/
 .page-container { break-after: page; }
-td { widows: 3; orphans: 3; }
+td { widows: 2; orphans: 2; }
 .section-title { break-after: avoid; }
 .section-title+tbody { break-before: avoid; }
 .leading.instructions { break-after: avoid; }
@@ -65,11 +65,14 @@ tr.leading  td.english { text-align: left;  }
 tr.trailing td.english { text-align: right; } 
 
 @media print {
+  thead {
+    display: table-row-group;
+  }
   @page {
     size: 74mm 105mm portrait; /* A7 */
-    /* in print, 0.4in on an A5 came out as exactly 1cm, so 0.6 should come out as 1.5cm */
-    margin-left:   0.6in;
-    margin-right:  0.6in;
+    /* in print, 0.4in on an A5 came out as exactly 1cm, 0.6 came out as 1.5cm; 0.7 should be just right */
+    margin-left:   0.7in;
+    margin-right:  0.7in;
     margin-bottom: 0.4in;
     margin-top:    0.3in; /* A5 print came out with the top margin a bit too big, so shrinking */
     @bottom-center {
