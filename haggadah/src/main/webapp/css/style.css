@@ -8,9 +8,11 @@ body { padding: 0 0 0 0; max-width: 940px; text-align: center; margin: auto; }
 .commentary { text-align: justify; }
 .commentary td { padding-bottom: 10px; }
 .commentary .spacer { height: 5px;} 
-.section-title td { text-align: center; font-variant: all-small-caps; background-color: #DDDDDD; border: 1px solid black; } 
+.section-title td, h1.section-title { text-align: center; font-variant: all-small-caps; background-color: #DDDDDD; border: 1px solid black; vertical-align: middle; } 
 .hebrew.unjustified { text-align: right; }
 .english.unjustified { text-align: left; }
+ul { text-align: left ;}
+.caption { text-align: center; }
 
 /** ORPHAN CONTROL **/
 .page-container { break-after: page; }
@@ -27,16 +29,19 @@ tbody:has(+ .break) { break-after: page; }
 /** SIZES **/
 body                { font-size: 10pt; }
 .hebrew             { font-size: 25pt; }
-.english            { font-size: 16pt; }
-.instructions       { font-size: 16pt; }
-.commentary         { font-size: 12pt;}
-.section-title td   { font-size: 18pt; }
+.english            { font-size: 17pt; }
+.instructions       { font-size: 18pt; }
+.commentary         { font-size: 15pt;}
+.section-title td   { font-size: 19pt; }
 .hebrew strong      { font-size: 27pt; } 
 td.english sup      { font-size: 10pt; }
 th.hebrew           { font-size: 27pt; }
 th.english          { font-size: 19pt; }
-td.english span.inclusion { font-size: 14pt; }
-td.hebrew  span.inclusion { font-size: 18pt; }
+td.english span.inclusion { font-size: 16pt; }
+td.hebrew  span.inclusion { font-size: 24pt; }
+svg text.hebrew     { font-size: 16px; text-anchor: middle; }
+svg text.english    { font-size: 11px; text-anchor: middle; }
+.caption.english   { font-size: 15pt; }
 
 /** FONTS **/ 
 body              { font-weight: 400; font-style: normal; font-family: "Poppins", monospace; }
@@ -45,7 +50,8 @@ body              { font-weight: 400; font-style: normal; font-family: "Poppins"
 .english          { font-weight: 400; font-style: normal; font-family: "Lato", monospace; }
 .instructions     { font-weight: 400; font-style: italic; font-family: "EB Garamond", monospace; }
 .commentary       { font-weight: 400; font-style: normal; font-family: "Poppins", monospace; }	
-.section-title td { font-weight: 500; font-style: normal; font-family: "Poppins", monospace; } 
+.section-title td,
+h1.section-title  { font-weight: 500; font-style: normal; font-family: "Poppins", monospace; } 
 .hebrew strong    { font-weight: 400; font-style: normal; font-family: "Frank Ruhl Libre", monospace; }
 
 /** ADDITIONAL **/
