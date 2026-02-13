@@ -31,8 +31,9 @@ body                { font-size: 10pt; }
 .hebrew             { font-size: 25pt; }
 .english            { font-size: 17pt; }
 .instructions       { font-size: 18pt; }
-.commentary         { font-size: 15pt;}
-.section-title td   { font-size: 19pt; }
+.commentary         { font-size: 14pt;}
+.section-title td,
+ h1.section-title   { font-size: 19pt; }
 .hebrew strong      { font-size: 27pt; } 
 td.english sup      { font-size: 10pt; }
 th.hebrew           { font-size: 27pt; }
